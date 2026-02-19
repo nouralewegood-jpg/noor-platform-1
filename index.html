@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noor AI Ultra v1 – المنصة المتكاملة للتسويق الذكي</title>
+  <meta name="description" content="Noor AI Ultra – منصة SaaS ذكية لإدارة المحتوى، النشر التلقائي، والتحليلات المتقدمة. اكتشف أفضل حل للتسويق الرقمي والذكاء الاصطناعي." />
+  <meta name="keywords" content="ذكاء اصطناعي, تسويق رقمي, إدارة محتوى, نشر تلقائي, منصة نور, Noor AI, SaaS, تحليلات, تسويق ذكي, أتمتة" />
+  <meta name="author" content="Noor Platform" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="ar" />
+  <link rel="canonical" href="https://noor-platform-v1.vercel.app/" />
+  <meta property="og:title" content="Noor AI Ultra v1 – المنصة المتكاملة للتسويق الذكي" />
+  <meta property="og:description" content="منصة SaaS ذكية لإدارة المحتوى والنشر التلقائي والتحليلات المتقدمة" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://noor-platform-v1.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Noor AI Ultra v1" />
+  <meta name="twitter:description" content="منصة SaaS ذكية لإدارة المحتوى والتسويق الرقمي" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-alt: #0b0b12;
+      --card: #10101a;
+      --accent: #f5b544;
+      --accent-soft: rgba(245, 181, 68, 0.12);
+      --accent-strong: #ffcf6b;
+      --text: #ffffff;
+      --muted: #7a7a94;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --danger: #ff4b6a;
+      --success: #3dd68c;
+      --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.65);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-pill: 999px;
+      --blur: 26px;
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.25s ease-out;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    html, body {
+      background: radial-gradient(circle at top, #141428 0, #050509 52%, #020208 100%);
+      color: var(--text);
+      font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 20px 16px 64px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(5, 5, 9, 0.96), rgba(5, 5, 9, 0.82), transparent);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 10px 4px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 20% 0, #ffe9b0 0, #f5b544 32%, #8b5bff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .logo-mark span {
+      font-weight: 800;
+      font-size: 18px;
+      color: #1b1205;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 16px;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill {
+      border-radius: var(--radius-pill);
+      padding: 6px 12px;
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(245, 181, 68, 0.4);
+      background: radial-gradient(circle at top left, rgba(245, 181, 68, 0.18), rgba(5, 5, 9, 0.9));
+      color: var(--accent-strong);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(61, 214, 140, 0.25);
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 8px 16px;
+      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(10, 10, 18, 0.9);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f5b544, #ffcf6b, #ff9f4b);
+      color: #1b1205;
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.85);
+    }
+
+    .btn-ghost {
+      background: rgba(12, 12, 20, 0.9);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(20, 20, 32, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .btn span.icon {
+      font-size: 16px;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 4px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: var(--radius-pill);
+      padding: 4px 10px 4px 6px;
+      background: rgba(10, 10, 18, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 11px;
+      color: var(--muted);
+      width: fit-content;
+    }
+
+    .hero-badge span.tag {
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(245, 181, 68, 0.12);
+      color: var(--accent-strong);
+      font-weight: 600;
+      font-size: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, #f5b544, #ffcf6b, #ff9f4b);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-meta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(245, 181, 68, 0.8);
+    }
+
+    .hero-right {
+      position: relative;
+      min-height: 260px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, rgba(245, 181, 68, 0.18), rgba(10, 10, 18, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-card-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .hero-card-badge {
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(5, 5, 9, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-card-badge span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--success);
+    }
+
+    .hero-card-body {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 14px;
+      align-items: flex-end;
+    }
+
+    @media (max-width: 640px) {
+      .hero-card-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .metric-row strong {
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .hero-chart {
+      position: relative;
+      border-radius: 16px;
+      background: rgba(5, 5, 9, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 10px 8px;
+      overflow: hidden;
+    }
+
+    .hero-chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .hero-chart-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    .hero-chart-tag {
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: rgba(61, 214, 140, 0.12);
+      color: var(--success);
+      font-size: 10px;
+    }
+
+    .hero-chart-graph {
+      position: relative;
+      height: 70px;
+      margin-top: 4px;
+      background: linear-gradient(to top, rgba(245, 181, 68, 0.08), transparent);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .hero-chart-line {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(245, 181, 68, 0.1), rgba(245, 181, 68, 0.5));
+      clip-path: polygon(0% 80%, 10% 60%, 20% 68%, 30% 40%, 40% 52%, 50% 30%, 60% 38%, 70% 22%, 80% 30%, 90% 18%, 100% 24%, 100% 100%, 0% 100%);
+    }
+
+    .hero-floating {
+      position: absolute;
+      inset-inline-start: -10px;
+      bottom: -18px;
+      display: flex;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .floating-card {
+      border-radius: 16px;
+      background: rgba(5, 5, 9, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 8px 10px;
+      font-size: 10px;
+      color: var(--muted);
+      min-width: 120px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 11px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .floating-card span.badge {
+      border-radius: 999px;
+      padding: 2px 6px;
+      background: rgba(245, 181, 68, 0.12);
+      color: var(--accent-strong);
+      font-size: 9px;
+    }
+
+    /* SECTION WRAPPER */
+    .section {
+      margin-top: 8px;
+      padding: 22px 18px 20px;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, rgba(245, 181, 68, 0.06), rgba(5, 5, 9, 0.96));
+      border: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 420px;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* FEATURES GRID */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .features-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .feature-card {
+      border-radius: var(--radius-md);
+      background: rgba(10, 10, 18, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 12px 12px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background var(--transition-med);
+      cursor: default;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.85);
+      border-color: rgba(245, 181, 68, 0.6);
+      background: radial-gradient(circle at top left, rgba(245, 181, 68, 0.12), rgba(10, 10, 18, 0.98));
+    }
+
+    .feature-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      background: rgba(245, 181, 68, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .feature-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .feature-desc {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .feature-meta {
+      margin-top: 4px;
+      font-size: 10px;
+      color: var(--accent-strong);
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 960px) {
+      .pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .pricing-card {
+      border-radius: var(--radius-md);
+      background: rgba(10, 10, 18, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 14px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card.highlight {
+      border-color: rgba(245, 181, 68, 0.8);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+      background: radial-gradient(circle at top left, rgba(245, 181, 68, 0.16), rgba(10, 10, 18, 0.98));
+    }
+
+    .pricing-label {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .pricing-name {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .pricing-price {
+      font-size: 20px;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+
+    .pricing-price span {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-inline-start: 4px;
+    }
+
+    .pricing-list {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .pricing-list-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pricing-list-item span.bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(245, 181, 68, 0.18);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: var(--accent-strong);
+    }
+
+    .pricing-cta {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pricing-tagline {
+      margin-top: 6px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .service-card {
+      border-radius: var(--radius-md);
+      background: rgba(10, 10, 18, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 11px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-label {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .service-name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .service-desc {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .service-tag {
+      margin-top: 4px;
+      font-size: 10px;
+      color: var(--accent-strong);
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 880px) {
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .faq-item {
+      border-radius: 14px;
+      background: rgba(10, 10, 18, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 12px 9px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .faq-item strong {
+      display: block;
+      font-size: 12px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    /* LANGUAGE TOGGLE */
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border-radius: var(--radius-pill);
+      padding: 4px;
+      background: rgba(10, 10, 18, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 11px;
+    }
+
+    .lang-toggle button {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      padding: 4px 8px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      font-size: 11px;
+      font-family: inherit;
+      transition: background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .lang-toggle button.active {
+      background: rgba(245, 181, 68, 0.16);
+      color: var(--accent-strong);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 16px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 4px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* ENGLISH CONTENT (LTR) */
+    .en {
+      direction: ltr;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .en .hero-title {
+      font-size: clamp(26px, 3.6vw, 34px);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo-mark">
+          <span>ن</span>
+        </div>
+        <div class="logo-text">
+          <div class="logo-text-main">Noor AI Ultra</div>
+          <div class="logo-text-sub">منصة التسويق الذكي متعددة الأنشطة</div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>تشغيل ذاتي للمحتوى 24/7</span>
+        </div>
+        <div class="lang-toggle" id="langToggle">
+          <button data-lang="ar" class="active">العربية</button>
+          <button data-lang="en">English</button>
+        </div>
+<button class="btn btn-ghost" onclick="scrollToSection('pricing')" aria-label="عرض خطط الأسعار">
+	          <span>الأسعار</span>
+	        </button>
+<button class="btn btn-primary" onclick="scrollToSection('hero')" aria-label="ابدأ تجربة المنصة الآن">
+	          <span class="icon" aria-hidden="true">⚡</span>
+	          <span>ابدأ التجربة الآن</span>
+	        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <main>
+      <!-- HERO AR -->
+      <section id="hero" class="hero lang-ar">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="tag">منصة SaaS</span>
+            <span>جيل جديد من التسويق الذكي</span>
+          </div>
+          <h1 class="hero-title">
+            كل تسويقك في لوحة واحدة
+            <span class="highlight">مدعومة بالذكاء الاصطناعي</span>
+          </h1>
+          <p class="hero-subtitle">
+            Noor AI Ultra v1 هي النسخة المطورة التي تجمع بين إنشاء المحتوى، الجدولة، النشر التلقائي، والتحليلات في منصة واحدة مصممة خصيصًا
+            للرخام، الدهانات، الصيانة، والديكور – بدون فوضى، بدون تعقيد.
+          </p>
+          <div class="hero-actions">
+<button class="btn btn-primary" onclick="scrollToSection('pricing')" aria-label="تجربة المنصة والاشتراك">
+	              <span class="icon" aria-hidden="true">🚀</span>
+	              <span>جرّب المنصة الآن</span>
+	            </button>
+<button class="btn btn-ghost" onclick="scrollToSection('features')" aria-label="استعراض مزايا المنصة">
+	              <span class="icon" aria-hidden="true">👁️</span>
+	              <span>استعراض المزايا</span>
+	            </button>
+          </div>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>أكثر من 500 منشور تم إنشاؤه تلقائيًا</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>إدارة متعددة الأنشطة من لوحة واحدة</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div>
+                <div class="hero-card-title">لوحة تحكم Noor AI Ultra</div>
+                <div style="font-size:10px;color:var(--muted);margin-top:2px;">نظرة حية على أداء حملاتك</div>
+              </div>
+              <div class="hero-card-badge">
+                <span class="dot"></span>
+                <span>نشط الآن</span>
+              </div>
+            </div>
+            <div class="hero-card-body">
+              <div class="hero-metrics">
+                <div class="metric-row">
+                  <span>منشورات هذا الأسبوع</span>
+                  <strong>38</strong>
+                </div>
+                <div class="metric-row">
+                  <span>منصات متصلة</span>
+                  <strong>6</strong>
+                </div>
+                <div class="metric-row">
+                  <span>معدل التفاعل</span>
+                  <strong>+214%</strong>
+                </div>
+                <div class="metric-row">
+                  <span>تكلفة المحتوى</span>
+                  <strong>0 درهم / منشور</strong>
+                </div>
+              </div>
+              <div class="hero-chart">
+                <div class="hero-chart-header">
+                  <div>
+                    <div style="font-size:10px;">نمو التفاعل</div>
+                    <div class="hero-chart-value">+214%</div>
+                  </div>
+                  <div class="hero-chart-tag">آخر 30 يوم</div>
+                </div>
+                <div class="hero-chart-graph">
+                  <div class="hero-chart-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-floating">
+              <div class="floating-card">
+                <strong>النشر التلقائي</strong>
+                <div>Instagram · Facebook · TikTok · LinkedIn</div>
+                <div style="margin-top:4px;">
+                  <span class="badge">جدولة ذكية</span>
+                </div>
+              </div>
+              <div class="floating-card">
+                <strong>أنشطة متعددة</strong>
+                <div>رخام · دهانات · صيانة · جبس بورد</div>
+                <div style="margin-top:4px;font-size:9px;color:var(--muted);">
+                  حسابات منفصلة – إدارة موحدة
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HERO EN -->
+      <section class="hero lang-en hidden">
+        <div class="hero-left en">
+          <div class="hero-badge">
+            <span class="tag">SaaS Platform</span>
+            <span>Next‑gen AI‑powered marketing OS</span>
+          </div>
+          <h1 class="hero-title">
+            One unified dashboard for all your
+            <span class="highlight">AI‑driven marketing</span>
+          </h1>
+          <p class="hero-subtitle">
+            Noor AI Ultra centralizes content creation, scheduling, auto‑publishing, and analytics into a single,
+            production‑ready platform built for marble, paints, maintenance, and décor businesses.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToSection('pricing')">
+              <span class="icon">🚀</span>
+              <span>Start your free trial</span>
+            </button>
+            <button class="btn btn-ghost" onclick="scrollToSection('features')">
+              <span class="icon">👁️</span>
+              <span>Explore features</span>
+            </button>
+          </div>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>500+ AI‑generated posts shipped</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>Multi‑business ready from day one</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div>
+                <div class="hero-card-title en">Noor AI Ultra Dashboard</div>
+                <div style="font-size:10px;color:var(--muted);margin-top:2px;">Live snapshot of your campaigns</div>
+              </div>
+              <div class="hero-card-badge">
+                <span class="dot"></span>
+                <span>Live</span>
+              </div>
+            </div>
+            <div class="hero-card-body">
+              <div class="hero-metrics">
+                <div class="metric-row">
+                  <span>Posts this week</span>
+                  <strong>38</strong>
+                </div>
+                <div class="metric-row">
+                  <span>Connected channels</span>
+                  <strong>6</strong>
+                </div>
+                <div class="metric-row">
+                  <span>Engagement lift</span>
+                  <strong>+214%</strong>
+                </div>
+                <div class="metric-row">
+                  <span>Content cost</span>
+                  <strong>$0 / post</strong>
+                </div>
+              </div>
+              <div class="hero-chart">
+                <div class="hero-chart-header">
+                  <div>
+                    <div style="font-size:10px;">Engagement growth</div>
+                    <div class="hero-chart-value">+214%</div>
+                  </div>
+                  <div class="hero-chart-tag">Last 30 days</div>
+                </div>
+                <div class="hero-chart-graph">
+                  <div class="hero-chart-line"></div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-floating">
+              <div class="floating-card en">
+                <strong>Auto‑publishing</strong>
+                <div>Instagram · Facebook · TikTok · LinkedIn</div>
+                <div style="margin-top:4px;">
+                  <span class="badge">Smart scheduling</span>
+                </div>
+              </div>
+              <div class="floating-card en">
+                <strong>Multi‑business</strong>
+                <div>Marble · Paints · Maintenance · Gypsum</div>
+                <div style="margin-top:4px;font-size:9px;color:var(--muted);">
+                  Separate brands – unified control
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">مزايا مصممة لعالمك الحقيقي</h2>
+            <p class="section-subtitle">
+              ليست مجرد أداة نشر… Noor AI Ultra تعمل كمنصة تشغيل تسويقي كاملة، من الفكرة إلى التقرير النهائي،
+              مع قابلية توسّع SaaS حقيقية.
+            </p>
+          </div>
+          <div class="section-tag">AI‑first · Multi‑business · Production‑ready</div>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3 class="feature-title">إنشاء محتوى بالذكاء الاصطناعي</h3>
+            <p class="feature-desc">
+              أنشئ عشرات المنشورات بضغطة واحدة، مع قوالب مخصصة للرخام، الدهانات، الصيانة، والديكور – جاهزة للنشر فورًا.
+            </p>
+            <div class="feature-meta">دعم كامل للعربية والإنجليزية</div>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3 class="feature-title">جدولة ونشر تلقائي</h3>
+            <p class="feature-desc">
+              اربط كل حساباتك، حدّد التقويم، ودع المنصة تنشر تلقائيًا في أفضل الأوقات بدون تدخل يدوي.
+            </p>
+            <div class="feature-meta">Instagram · Facebook · TikTok · LinkedIn</div>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3 class="feature-title">تحليلات وتقارير PDF</h3>
+            <p class="feature-desc">
+              تتبع الأداء، التفاعل، ونمو المتابعين، وصدّر تقارير PDF جاهزة للعميل أو الإدارة بضغطة واحدة.
+            </p>
+            <div class="feature-meta">تقارير قابلة للمشاركة فورًا</div>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🏷️</div>
+            <h3 class="feature-title">إدارة متعددة الأنشطة</h3>
+            <p class="feature-desc">
+              حسابات منفصلة لكل نشاط (رخام، دهانات، صيانة، جبس بورد) مع لوحة تحكم موحدة لإدارة كل شيء.
+            </p>
+            <div class="feature-meta">جاهزة للتوسع إلى SaaS متعدد العملاء</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">خطط بسيطة… جاهزة للنمو</h2>
+            <p class="section-subtitle">
+              ابدأ بخطة واحدة، ثم توسّع لاحقًا إلى نموذج SaaS كامل متعدد العملاء، بدون إعادة بناء أو فوضى تقنية.
+            </p>
+          </div>
+          <div class="section-tag">يمكن تعديل الأسعار لاحقًا حسب استراتيجيتك</div>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div class="pricing-label">للإنطلاق</div>
+            <div class="pricing-name">خطة البداية</div>
+            <div class="pricing-price">0<span>/ شهر</span></div>
+            <div class="pricing-list">
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>منشورات محدودة شهريًا</span>
+              </div>
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>منصة واحدة متصلة</span>
+              </div>
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>قوالب جاهزة للمحتوى</span>
+              </div>
+            </div>
+            <div class="pricing-cta">
+              <button class="btn btn-ghost">ابدأ مجانًا</button>
+            </div>
+            <div class="pricing-tagline">مثالية للاختبار والتجربة الأولى</div>
+          </article>
+
+          <article class="pricing-card highlight">
+            <div class="pricing-label">الأكثر اختيارًا</div>
+            <div class="pricing-name">خطة الأعمال</div>
+            <div class="pricing-price">249<span>درهم / شهر</span></div>
+            <div class="pricing-list">
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>حتى 4 أنشطة (رخام، دهانات، صيانة، ديكور)</span>
+              </div>
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>نشر تلقائي على كل المنصات</span>
+              </div>
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>تقارير PDF شهرية</span>
+              </div>
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>دعم أولوية</span>
+              </div>
+            </div>
+            <div class="pricing-cta">
+              <button class="btn btn-primary">
+                <span class="icon">⚡</span>
+                <span>ابدأ مع خطة الأعمال</span>
+              </button>
+            </div>
+            <div class="pricing-tagline">مصممة لوكالات التسويق وأصحاب الأنشطة الجادة</div>
+          </article>
+
+          <article class="pricing-card">
+            <div class="pricing-label">جاهزة للـ SaaS</div>
+            <div class="pricing-name">خطة الشركاء</div>
+            <div class="pricing-price">مخصصة<span>/ حسب الاستخدام</span></div>
+            <div class="pricing-list">
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>تجهيز المنصة كنظام SaaS متعدد العملاء</span>
+              </div>
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>ربط بوابات دفع وفوترة</span>
+              </div>
+              <div class="pricing-list-item">
+                <span class="bullet">✓</span>
+                <span>دعم تقني وتطوير مستمر</span>
+              </div>
+            </div>
+            <div class="pricing-cta">
+              <button class="btn btn-ghost">تواصل لعرض مخصص</button>
+            </div>
+            <div class="pricing-tagline">مثالية لتحويل Noor AI Ultra إلى منتج SaaS كامل</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">مصممة لأنشطة الرخام، الدهانات، الصيانة، والديكور</h2>
+            <p class="section-subtitle">
+              كل نشاط له لغة مختلفة، صور مختلفة، وزبون مختلف. Noor AI Ultra تفهم هذا، وتبني لكل نشاط هوية محتوى
+              منفصلة مع إدارة موحدة.
+            </p>
+          </div>
+          <div class="section-tag">Sector‑aware content engine</div>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-label">رخام</div>
+            <div class="service-name">معارض الرخام والجرانيت</div>
+            <p class="service-desc">
+              محتوى يعرض الفخامة، التفاصيل، وأنواع الرخام، مع قبل/بعد، وأسعار تقريبية بطريقة ذكية.
+            </p>
+            <div class="service-tag">صور قبل/بعد + عروض موسمية</div>
+          </article>
+          <article class="service-card">
+            <div class="service-label">دهانات</div>
+            <div class="service-name">شركات الدهانات والديكور</div>
+            <p class="service-desc">
+              منشورات تبرز الألوان، التشطيبات، والستايلات، مع نصوص مقنعة للعميل النهائي.
+            </p>
+            <div class="service-tag">ستايلات عصرية + ثقة في التنفيذ</div>
+          </article>
+          <article class="service-card">
+            <div class="service-label">صيانة</div>
+            <div class="service-name">شركات الصيانة والخدمات</div>
+            <p class="service-desc">
+              محتوى يركز على السرعة، الاعتمادية، وحل المشاكل، مع إبراز أرقام التواصل والعروض.
+            </p>
+            <div class="service-tag">مناسب للإعلانات الممولة مباشرة</div>
+          </article>
+          <article class="service-card">
+            <div class="service-label">جبس بورد</div>
+            <div class="service-name">ديكورات الأسقف والجدران</div>
+            <p class="service-desc">
+              عرض تصاميم، إضاءة مخفية، وأفكار تنفيذ، مع صور قبل/بعد وقصص مشاريع حقيقية.
+            </p>
+            <div class="service-tag">إلهام بصري + استفسارات جاهزة</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- MAP SECTION -->
+      <section id="contact" class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">موقعنا الجغرافي</h2>
+            <p class="section-subtitle">
+              تفضل بزيارتنا في مقرنا الرئيسي لمناقشة مشاريعك وتجربة حلولنا الذكية على أرض الواقع.
+            </p>
+          </div>
+          <div class="section-tag">العين، الإمارات العربية المتحدة</div>
+        </div>
+        <div style="width: 100%; height: 400px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle);">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.5623456789!2d55.827402!3d24.150613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA5JzAyLjIiTiA1NcKwNDknMzguNyJF!5e0!3m2!1sar!2sae!4v1707900000000!5m2!1sar!2sae" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="موقع نور الوجود - العين، النود">
+          </iframe>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">أسئلة متكررة… بإجابات مباشرة</h2>
+            <p class="section-subtitle">
+              المنصة مبنية لتكون واضحة، قابلة للتوسع، وجاهزة للتحويل إلى SaaS كامل بدون إعادة بناء أو كود فوضوي.
+            </p>
+          </div>
+          <div class="section-tag">شفافية تقنية وتجارية</div>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <strong>هل أحتاج أن أكون مبرمجًا لاستخدام المنصة؟</strong>
+            لا. الواجهة مصممة لتكون بسيطة، تعتمد على لوحة تحكم واضحة، مع إعدادات جاهزة للأنشطة المختلفة. كل ما تحتاجه
+            هو اختيار النشاط، ربط الحسابات، وتحديد خطة النشر.
+          </article>
+          <article class="faq-item">
+            <strong>هل يمكن تحويل المنصة إلى SaaS متعدد العملاء؟</strong>
+            نعم. البنية المقترحة تدعم فصل الحسابات، إضافة طبقة اشتراكات، وربط بوابات دفع لاحقًا، بدون إعادة بناء
+            جذرية.
+          </article>
+          <article class="faq-item">
+            <strong>هل تدعم المنصة العربية والإنجليزية؟</strong>
+            نعم، المحتوى، الواجهة، والتقارير يمكن أن تكون ثنائية اللغة، مع تخصيص كامل حسب السوق المستهدف.
+          </article>
+          <article class="faq-item">
+            <strong>كيف أبدأ فعليًا؟</strong>
+            ابدأ بخطة واحدة، فعّل نشاط أو نشاطين، اختبر النتائج، ثم وسّع تدريجيًا إلى باقي الأنشطة أو نموذج SaaS كامل.
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Noor AI Ultra – كل الحقوق محفوظة.</div>
+        <div class="footer-links">
+          <a href="#hero">الرئيسية</a>
+          <a href="#features">المزايا</a>
+          <a href="#pricing">الأسعار</a>
+          <a href="#contact">تواصل</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const langToggle = document.getElementById("langToggle");
+    const arSections = document.querySelectorAll(".lang-ar");
+    const enSections = document.querySelectorAll(".lang-en");
+
+    langToggle.addEventListener("click", (e) => {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+      const lang = btn.dataset.lang;
+      langToggle.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      if (lang === "ar") {
+        document.documentElement.setAttribute("dir", "rtl");
+        document.documentElement.setAttribute("lang", "ar");
+        arSections.forEach((s) => s.classList.remove("hidden"));
+        enSections.forEach((s) => s.classList.add("hidden"));
+      } else {
+        document.documentElement.setAttribute("dir", "ltr");
+        document.documentElement.setAttribute("lang", "en");
+        arSections.forEach((s) => s.classList.add("hidden"));
+        enSections.forEach((s) => s.classList.remove("hidden"));
+      }
+    });
+  </script>
+</body>
+</html>

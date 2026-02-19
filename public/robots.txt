@@ -1,0 +1,16 @@
+# Robots.txt for Noor Platform v1
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Sitemaps
+Sitemap: https://noor-platform-v1.vercel.app/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Request rate
+Request-rate: 1/1s
